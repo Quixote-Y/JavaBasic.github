@@ -1,0 +1,27 @@
+<c3p0-config>
+    <!-- 我们可以修改这里面的参数，很简单的控制数据库连接池的结构  -->
+    <!-- 命名的配置，我把它改为yyf -->
+    <named-config name="yyf">
+        <!-- 连接数据库的4项基本参数 -->
+        <!--按自己的参数配置-->
+        <!--连接mysql5以前用com.mysql.jdbc.Driver,之后用com.mysql.cj.jdbc.Driver-->
+        
+        <property name="driverClass">com.mysql.cj.jdbc.Driver</property>
+        
+        <property name="jdbcUrl">jdbc:mysql://localhost:3306/yyf_db01?rewriteBatchedStatements=true</property>
+        <property name="user">root</property>
+        <property name="password">1234</property>
+        <!-- 如果池中数据连接不够时一次增长多少个 -->
+        <property name="acquireIncrement">5</property>
+        <!-- 初始化连接数 -->
+        <property name="initialPoolSize">5</property>
+        <!-- 最小连接数 -->
+        <property name="minPoolSize">10</property>
+        <!-- 最大连接数 -->
+        <property name="maxPoolSize">40</property>
+        <!-- JDBC的标准参数，用以控制数据源内加载的PrepareStatements数量 -->
+        <property name="maxStatements">200</property>
+        <!-- 连接池内单个连接所拥有的最大缓存statements数 -->
+        <property name="maxStatementsPerConnection">5</property>
+    </named-config>
+</c3p0-config>
